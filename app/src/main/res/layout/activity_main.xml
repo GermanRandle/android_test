@@ -1,11 +1,408 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue"
     tools:context=".MainActivity">
 
-    <!-- Место для верстки -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/headerPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/header_photo_dota2"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <View
+            android:id="@+id/appLogoBackground"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/logo_background"
+            app:layout_constraintTop_toBottomOf="@id/headerPhoto"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-25dp"
+            />
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo_dota2"
+            app:layout_constraintTop_toTopOf="@id/appLogoBackground"
+            app:layout_constraintLeft_toLeftOf="@id/appLogoBackground"
+            app:layout_constraintBottom_toBottomOf="@id/appLogoBackground"
+            app:layout_constraintRight_toRightOf="@id/appLogoBackground"
+            />
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/appLogoBackground"
+            app:layout_constraintTop_toBottomOf="@id/headerPhoto"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/appName"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+        <LinearLayout
+            android:id="@+id/ratingSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            app:layout_constraintLeft_toRightOf="@id/appLogoBackground"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <TextView
+                android:id="@+id/downloadsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/appLogoBackground"
+                app:layout_constraintTop_toBottomOf="@id/headerPhoto"
+                android:layout_marginStart="10dp"
+                android:text="@string/reviewsCount"
+                android:textColor="@color/light_gray"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/appLogoBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/category1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category1"
+                android:textColor="@color/light_blue"
+                android:background="@drawable/category_background"
+                />
+
+            <TextView
+                android:id="@+id/category2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category2"
+                android:layout_marginStart="15sp"
+                android:textColor="@color/light_blue"
+                android:background="@drawable/category_background"
+                />
+
+            <TextView
+                android:id="@+id/category3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category3"
+                android:layout_marginStart="15sp"
+                android:textColor="@color/light_blue"
+                android:background="@drawable/category_background"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/appDescription"
+            app:layout_constraintTop_toBottomOf="@id/categories"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/bright_gray"
+            />
+
+        <TextView
+            android:id="@+id/reviewsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reviewsHeader"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reviewsHeader"
+            android:layout_marginStart="24dp"
+            android:text="@string/appRating"
+            android:textSize="40sp"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/ratingSection2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/reviewsHeader"
+            app:layout_constraintLeft_toRightOf="@id/rating"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/star1_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star2_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star3_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star4_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+            <ImageView
+                android:id="@+id/star5_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/star"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/downloadsCount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/rating"
+            app:layout_constraintTop_toBottomOf="@id/ratingSection2"
+            android:layout_marginStart="15dp"
+            android:text="@string/reviewsCount2"
+            android:textColor="@color/bright_gray"
+            android:textSize="12sp"
+            />
+
+        <View
+            android:id="@+id/delimeter"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/comment1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/delimeter"
+            >
+
+            <ImageView
+                android:id="@+id/commentAvatar1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/commentator1"
+                />
+
+            <TextView
+                android:id="@+id/commentatorName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/commentAvatar1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+                android:text="@string/commentatorName1"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/commentDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/commentAvatar1"
+                app:layout_constraintTop_toBottomOf="@id/commentatorName1"
+                android:layout_marginStart="16dp"
+                android:text="@string/commentDate"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/commentText1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/commentText"
+                app:layout_constraintTop_toBottomOf="@id/commentAvatar1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/bright_gray"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/comment2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/comment1"
+            >
+
+            <ImageView
+                android:id="@+id/commentAvatar2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/commentator2"
+                />
+
+            <TextView
+                android:id="@+id/commentatorName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/commentAvatar2"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+                android:text="@string/commentatorName2"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/commentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/commentAvatar2"
+                app:layout_constraintTop_toBottomOf="@id/commentatorName2"
+                android:layout_marginStart="16dp"
+                android:text="@string/commentDate"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/commentText2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/commentText"
+                app:layout_constraintTop_toBottomOf="@id/commentAvatar2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/bright_gray"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/comment2"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/buttonText"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
