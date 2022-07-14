@@ -22,6 +22,35 @@
             app:layout_constraintLeft_toLeftOf="parent"
             />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/goBackButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            app:tint="@color/white"
+            android:clickable="true"
+            app:backgroundTint="@color/pale"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_left"
+            android:focusable="true" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/settingsButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            app:tint="@color/white"
+            android:clickable="true"
+            app:backgroundTint="@color/pale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/settings_icon"
+            android:focusable="true" />
+
         <View
             android:id="@+id/appLogoBackground"
             android:layout_width="84dp"
@@ -432,9 +461,10 @@
             android:fontFamily="@font/sk_modernist"
             android:textColor="@color/black"
             android:textFontWeight="700"
+            android:clickable="true"
             android:textAllCaps="false"
             android:textSize="20sp"
-            />
+            android:focusable="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
