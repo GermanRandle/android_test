@@ -12,7 +12,8 @@
     <color name="grey">#FF1A1C29</color>
     <color name="dark_blue">#FF050818</color>
     <color name="navy_blue">#FF0F2B4D</color>
-    <color name="light_blue">#FF145186</color>
+    <color name="light_blue">#FF1E9BF4</color>
     <color name="light_gray">#FF45454D</color>
-    <color name="bright_gray">#FFEEF2FB</color>
+    <color name="bright_gray">#FFA8ABB7</color>
+    <color name="pale">#47FFFFFF</color>
 </resources>
